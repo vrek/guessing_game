@@ -19,7 +19,10 @@ fn main()
 
         let guess: u32 = match guess.trim().parse() {
             Ok(guess) => guess,
-            Err(_) => continue,
+            Err(_) => {
+                println!("Invalid guess");
+                continue;
+            }
         };
         match guess.cmp(&answer){
             Ordering::Equal => {
